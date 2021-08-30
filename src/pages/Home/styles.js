@@ -17,6 +17,49 @@ export const Main = styled.main`
 
     display: grid;
     grid-template-columns: 20% 60% 20%;
+
+    > nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        > img {
+            margin-top: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        
+        > section {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* background-color: #00000080; */
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+       > div > img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    > aside {
+        margin: 20px auto;
+
+        > button {
+            width: 200px;
+            padding: 10px;
+            border: unset;
+            background-color: #4c8c4a;
+
+            border-radius: 5px;
+            color: #fff;
+        }
+        
+    }
 `;
 
 export const FeedContainer = styled.section`
