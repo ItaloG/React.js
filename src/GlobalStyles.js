@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
         padding: 10px;
         font-weight: bold;
         background-color: transparent;
-        border: 2px solid var(-----textPrimary);
+        border: 2px solid var(--textPrimary);
         color: var(---primary);
         transition: --primary.2s;
         
