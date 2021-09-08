@@ -25,12 +25,13 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: bold;
         background-color: transparent;
         border: 2px solid var(--textPrimary);
-        color: var(---primary);
-        transition: --primary.2s;
-        
+        color: var(--textPrimary);
+        cursor: pointer;
+        transition: .2s;
+
         :hover{
-            border: 2px solid var(---primary);
-            color: var(---primary);
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
         :active{
             transform: scale(0.95);

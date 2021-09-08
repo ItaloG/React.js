@@ -11,6 +11,13 @@ function Teste() {
         "Samuel", "Emerson", "Antonio", "Jean", "Brayan", "Carol", "Thamires"
     ]);
 
+    const [nome, setNome] = useState("");
+
+    const handleSend = () => {
+        setNomes([...nomes, nome])
+
+        setNome("")
+    }
 
     return(
         <>
@@ -21,8 +28,13 @@ function Teste() {
             </ul>
 
             <button onClick={() => setContador(Contador + 1)}>Contar</button>
+            <br/>
+            <input type="text" onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome"/>
+            <br/>
+            <button onClick={() => setNome("")}>Limpar</button>
+            <button onClick={handleSend}>Enviar</button>
+            <h2>{nome}</h2>
         </>
-        // <input type="text" placeholder="Digite seu nome"/>
     );
 }
 
