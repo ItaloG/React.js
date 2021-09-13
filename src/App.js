@@ -1,7 +1,7 @@
 import { GlobalStyles } from "./GlobalStyles";
-import Home from "./pages/Home"; 
-import Login from "./pages/Login";
-import Teste from "./Teste";
+
+import Router from "./router";
+
 
 
 
@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-    <GlobalStyles />
-    <Login />
+      <GlobalStyles />
+      <Router />
     </>
   );
 }

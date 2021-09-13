@@ -23,25 +23,32 @@ export const getUser = () => {
 };
 
 export const setUser = (user) => {
-  const user = JSON.parse(localStorage.getItem(USER_KEY));
+  const userLocal = JSON.parse(localStorage.getItem(USER_KEY));
 
-  user.user = user;
+  userLocal.user = user;
 
-  localStorage.setItem(USER_KEY, JSON.stringify(user));
+  localStorage.setItem(USER_KEY, JSON.stringify(userLocal));
 };
 
 export const isSignedIn = () => {
+  //recupero o user do localStorage
   const user = JSON.parse(localStorage.getItem(USER_KEY));
 
+  //verifico se user existe e se existe um token
   if (user && user.token) {
+    //decodifico o token
     const jwtDecoded = jwtDecode(user.token);
 
+    //pega a hora atual do sistema e converte em segundos
     const nowTime = (Date.now() / 1000) | 0;
 
+    //verifica se a data de expiração do token é menor que a data atual
     if (jwtDecoded.exp < nowTime) {
+      //se for menor, faz logout
       return signOut();
     }
 
+    //seta o token nas próximas requisições
     api.defaults.headers.common["Authorization"] = `Bearer ${user.token}`;
     return true;
   }
