@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
@@ -14,7 +13,7 @@ export const FormContainer = styled.form`
     padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 
     box-shadow: 0px 0px 20px #00000055;
 

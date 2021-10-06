@@ -14,7 +14,7 @@ function PrivateRoute({ children, ...rest }) {
 
 }
 
-function Router(){
+function Router() {
 
 
     return (

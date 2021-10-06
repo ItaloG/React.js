@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
     :root{
-        --primary: #FE0000;
+        --primary: #fe0000;
         --textPrimary: #000000;
     }
 
@@ -11,15 +11,16 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         outline: 0;
-        
+
         box-sizing: border-box;
     }
 
     body{
         font-family: sans-serif, Arial;
-        color: var(---textPrimary);
+        color: var(--textPrimary);
+        height: 100vh;
     }
-    
+
     button {
         padding: 10px;
         font-weight: bold;
@@ -38,5 +39,14 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    textarea, select {
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 4px;
+
+        resize: none;
+
+        font-family: sans-serif;
+    }
 
 `;

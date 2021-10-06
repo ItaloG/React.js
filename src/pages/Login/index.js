@@ -8,13 +8,14 @@ import { Link } from "react-router-dom";
 
 function Login() {
 
-    let history = useHistory();
+    const history = useHistory();
 
     const [formLogin, setFormLogin] = useState({
         email: "",
         senha: ""
-    })
+    });
 
+    //handle input genérico
     const handleInput = (e) => {
         setFormLogin({ ...formLogin, [e.target.id]: e.target.value });
     }
@@ -23,7 +24,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const response = await api.post("sessions", {
+            const response = await api.post("/sessions", {
                 email: formLogin.email,
                 password: formLogin.senha
             });
@@ -39,17 +40,16 @@ function Login() {
     return (
         <Container>
             <FormContainer onSubmit={handleSubmit}>
-                {formLogin.email}
-                {formLogin.senha}
-                <h1>Bem-Vindo ao</h1>
+                <h1>Bem-vindo ao</h1>
                 <h1>SENAI-Overflow</h1>
-                <Input label="E-mail" type="email" required id="email" handler={handleInput} />
-                <Input label="Senha" type="password" required id="senha" handler={handleInput} />
+                <Input label="E-mail" required
+                    type="email" id="email" handler={handleInput} />
+                <Input label="Senha" required
+                    type="password" id="senha" handler={handleInput} />
                 <button>Entrar</button>
                 <Link to="/register">Cadastre-se</Link>
             </FormContainer>
         </Container>
     );
 }
-
 export default Login;

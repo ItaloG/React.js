@@ -5,6 +5,7 @@ export const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 9;
+  top: 0;
 
   background-color: #333c;
 
@@ -23,7 +24,7 @@ export const ModalContainer = styled.section`
 
   overflow-y: auto;
 
-  background-color: var(--dark);
+  background-color: white;
   box-shadow: 0px 0px 10px black;
   border-radius: 4px;
 
